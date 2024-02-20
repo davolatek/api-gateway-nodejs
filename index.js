@@ -28,11 +28,11 @@ app.use('/api/v1/accounts/*', createGatewayMiddleware('http://localhost:7900', f
 
 app.use('/api/v1/auth/*', createGatewayMiddleware('http://localhost:7901', false));
 
-app.use('/api/v1/activities/*', createGatewayMiddleware('http://localhost:7902'));
+app.use('/api/v1/activities/*', createGatewayMiddleware('http://localhost:7902', false));
 
-app.use('/api/v1/properties/*', createGatewayMiddleware('http://localhost:7904'));
+app.use('/api/v1/properties/*', createGatewayMiddleware('http://localhost:7904', false));
 
-app.use('/api/v1/transactions/*', createGatewayMiddleware('http://localhost:7905'));
+app.use('/api/v1/transactions/*', createGatewayMiddleware('http://localhost:7905', false));
 
 // Start the server
 app.listen(PORT, () => {
