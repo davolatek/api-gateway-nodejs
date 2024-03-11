@@ -21,9 +21,9 @@ function createGatewayMiddleware(target, requiresToken = true) {
 }
 
 // Apply API Gateway middleware to specific routes
-app.use('/api/v1/accounts/update-account', createGatewayMiddleware('http://localhost:7900', true)); // Register user endpoint does not require token
-app.use('/api/v1/accounts/change-password', createGatewayMiddleware('http://localhost:7900', true)); // Register user endpoint does not require token
-app.use('/api/v1/accounts/complete-profile', createGatewayMiddleware('http://localhost:7900', true)); // Register user endpoint does not require token
+app.use('/api/v1/accounts/update-account', createGatewayMiddleware('http://localhost:7900', false)); // Register user endpoint does not require token
+app.use('/api/v1/accounts/change-password', createGatewayMiddleware('http://localhost:7900', false)); // Register user endpoint does not require token
+app.use('/api/v1/accounts/complete-profile', createGatewayMiddleware('http://localhost:7900', false)); // Register user endpoint does not require token
 app.use('/api/v1/accounts/*', createGatewayMiddleware('http://localhost:7900', false));
 
 app.use('/api/v1/auth/*', createGatewayMiddleware('http://localhost:7901', false));
